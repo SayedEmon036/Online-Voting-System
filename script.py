@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import datetime
 from user.models import DummyCitizenInfo
 df = pd.read_csv('DummyCitizenData.csv')            
 for i in range(len(df)):
@@ -12,7 +13,7 @@ for i in range(len(df)):
         phone = df['Phone Number'][i],
         area_name = df['Area Name'][i],
         ward_number = df['Ward Number'][i],
-        dob = df['dob'][i],
+        dob = datetime.now().date(),
         elec_Worker = df['elec_Worker'][i]
     )
     can.save()
